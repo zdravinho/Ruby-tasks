@@ -1,0 +1,25 @@
+puts 'Choose shape (triangle, rectangle or circle):'
+shape = gets.chomp.downcase
+
+if shape == 'triangle'
+  puts 'Enter triangle sides(a b c)'
+  input = gets.chomp.split(' ').map(&:to_i)
+  a = input[0]
+  b = input[1]
+  c = input[2]
+  x = ((a + b + c) / 2)
+  y =x*(x-a)*(x-b)*(x-c)
+  puts "Triangle square feet = #{Math.sqrt(y).to_i}"
+end
+if shape == 'rectangle'
+  puts 'Enter rectangle sides(a b):'
+  input = gets.chomp.split(' ').map(&:to_i)
+  a = input[0]
+  b = input[1]
+  puts "Rectangle square feet = #{a * b}"
+end
+if shape == 'circle'
+  puts 'Enter radius:'
+  input = gets.chomp.to_i
+  puts "Circle square feet = #{3.14159265 * (input * input)}"
+end
