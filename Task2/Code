@@ -1,0 +1,12 @@
+c = {Bulgaria: ['plovdiv', 'sofia', 'varna'], Greece: ['Thesaloniki', 'Athina'], Serbia: ['Nish, Belgrad']}
+
+puts 'Type \'list\' to see the cities of the dictionary :)'
+d = gets.chomp
+if d 
+    c.each do |key,value|
+    puts "#{value}" 
+    end
+end
+puts 'Enter a city: '
+a = gets.chomp.downcase
+p c.select { |k, v| v.include? a}.keys
